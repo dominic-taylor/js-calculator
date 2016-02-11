@@ -5,8 +5,8 @@
 //get.ElementId("display")
 
 
-function addOperator(add) {
-  console.log(add);
+function keyValue(key) {
+  console.log(key);
 }
 
 
