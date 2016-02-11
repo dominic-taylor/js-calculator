@@ -2,6 +2,7 @@
 
 table {
     border: 1px solid black;
+
 }
 
 #outer {
@@ -18,20 +19,23 @@ table {
 #keypad {
 background: #EEF0F0;
 border-radius: 10px;
+
 }
 
 #keypad  td {
   width: 50px;
   text-align: center;
   color: white;
-  table-layout: fixed;
   height:auto;
+  table-layout: fixed;
   background: #152A3D;
   border-radius: 10px;
   padding: 10px;
   }
 
-
+#keypad td.operator {
+  background-color: #A37A7A
+}
 
 
 
