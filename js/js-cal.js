@@ -1,32 +1,34 @@
 
 var operators = ['x','+','-','/'];
-var decimalKey = false;
+
+var currentVal = "0";  //set initial display to 0 
+var opVal = "0";   // set operator index
+var storeVal = "0";  // set memory value to 0
+var maxDigit = 20; // maximum number before decimal
+
+ //var output = document.getElementById("display");
 
 
 function keyValue(key) {
-
- var output = document.getElementById("display");
- var mathOp = key;
- var input = key;
-
-  if(mathOp=="CE") {
-    output.innerHTML ='';
-  } 
-// if equal key is pressed calculate and display result
-  else if(mathOp== '=') {
- 
-        var calculate = input;
-        var lastInput = calculate[calculate.length-1];
-        }
-  if (operators.indexOf(lastInput)>-1 || lastInput == '.')
-     calculate = calculate.replace(/.$/,'');
-var output = eval(calculate);
-
-  document.getElementById('display').innerHTML = output;
- 
-  console.log(lastInput, mathOp, output);
-
+  
+  document.getElementById("display").innerHTML =innerHTML = key;
+  console.log(key);
 };
 
+//-----CLEAR ENTRY-------------------
+function allClear() { 
+ 
+  currentVal = "0";
+  document.getElementById("display").innerHTML = currentVal;
+  };
+//---- Clear ALL entries--------------
+
+function clearScreen(){
+
+   currentVal = "0";
+   OpVal = 0;                //clear operation
+   storeVal = "0";          //clear memory
+   document.getElementById("display").innerHTML = currentVal;
+ }
 
 

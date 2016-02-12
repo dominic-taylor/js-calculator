@@ -5,7 +5,7 @@
   <!-- Basic Page Needs-->
 
   <meta charset="utf-8">
-  <title>JS Calculator 1.0 </title>
+  <title>Simple JS Calculator 1.0 </title>
   
   <!-- Mobile Specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,14 +19,17 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
-    <!-- JS --> 
-        <script src="js/js-cal.js" type="text/javascript" charset="utf-8"r></script>
+  
+  <!-- JS --> 
+       
+   <script src="js/js-cal.js" type="text/javascript" charset="utf-8"r></script>
+
 </head>
 
 <body class=>
 
 
-  <div id="calcutor"> 
+  <div align= "center" id="calculator"> 
 
 <table id= "outer">
   <caption>JS Calculator</caption> 
@@ -43,8 +46,8 @@
     <td>
     <table id="keypad">
       <tr>
-        <td id="allClear" onclick=keyValue('AC')>AC</td>
-        <td id="clear" onclick=keyValue('CE')>CE</td>
+        <td id="allClear"  onclick=allClear()>AC</td>
+        <td id="clear"  onclick=clearScreen()>CE</td>
         <td ></td>
         <td id="minus" class="operator" onclick=keyValue('\-')>-</td>
       </tr>
@@ -69,7 +72,7 @@
       <tr>
         <td id="zero" onclick=keyValue(0)>0</td>
         <td id="dot" onclick=keyValue('\.')>.</td>
-        <td id="equal" onclick=keyValue('\=')>=</td>
+        <td id="result" onclick=keyValue('\=')>=</td>
         <td id="percent" class="operator" onclick=keyValue('\%')>%</td
       </tr>
     </table>
