@@ -6,11 +6,28 @@ var opVal = "0";   // set operator index
 var storeVal = "0";  // set memory value to 0
 var maxDigit = 20; // maximum number before decimal
 
-function keyValue(key) {
-  
-  document.getElementById("display").innerHTML =innerHTML = key;
-  console.log(key);
-};
+
+ //------ADD A DIGIT TO DISPLAY -----------
+function keyValue(key) {          
+  //{ if (currentVal.indexOf("!") == -1) { //if not already an error
+     if ((eval(currentVal) == 0) && (currentVal.indexOf(".") == -1)) {
+          currentVal = parseFloat(key);
+      } else {
+        currentVal = currentVal + parseFloat(key);
+        };
+        
+  /*  if (currentVal.indexOf("e0") != -1)
+     { var epos = currentVal.indexOf("e");
+       currentVal = currentVal.substring(0,epos+1) + currentVal.substring(epos+2);
+     };*/
+  if (currentVal.length > maxDigit){
+
+      currentVal = "Too long"; //don't allow over maxDigit digits before "." ???
+     };
+    document.getElementById("display").innerHTML = key;
+    console.log(key);
+  } ;
+
 
 //-----CLEAR ENTRY-------------------
 function allClear() { 
@@ -39,4 +56,7 @@ function dot()                  //PUT IN "." if appropriate.
     };
   };
    document.getElementById("display").innerHTML = currentVal;
- }
+ };
+
+
+ 
