@@ -1,30 +1,32 @@
 
-var operators = ['x','+','-','&divide'];
+var operators = ['x','+','-','/'];
 var decimalKey = false;
 
 
 function keyValue(key) {
-  document.getElementById('display').innerHTML = key;
-  //console.log(output);
 
+ var output = document.getElementById("display");
+ var mathOp = key;
+ var input = key;
 
-// if CE key pressed, clear everything
-//var keyVal = this.innerHTML;
+  if(mathOp=="CE") {
+    output.innerHTML ='';
+  } 
+// if equal key is pressed calculate and display result
+  else if(mathOp== '=') {
+ 
+        var calculate = input;
+        var lastInput = calculate[calculate.length-1];
+        }
+  if (operators.indexOf(lastInput)>-1 || lastInput == '.')
+     calculate = calculate.replace(/.$/,'');
+var output = eval(calculate);
 
-if(key=="CE") {
-  innerHTML ='';
-}
+  document.getElementById('display').innerHTML = output;
+ 
+  console.log(lastInput, mathOp, output);
 
-if(key== '=') {
-  var calculate=inputVal;
-}
 };
 
 
 
-
-
-
-
-
-//};
