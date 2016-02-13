@@ -14,23 +14,15 @@ function keyValue(key) {
       } else {
         currentVal = currentVal + key;
         };
-        
-  /*  if (currentVal.indexOf("e0") != -1)
-     { var epos = currentVal.indexOf("e");
-       currentVal = currentVal.substring(0,epos+1) + currentVal.substring(epos+2);
-     };*/
+ 
   if (currentVal.length > maxDigit){                          
       alert("Too long. Expressions must be less than 20 characters."); //don't allow over maxDigit digits before "." ???     
       // I Made this an alert because it is easier for the user to understand what has happended. 
       currentVal = '';
-
-
      };
     document.getElementById("display").innerHTML = currentVal;
     console.log(currentVal);
- 
-
-  } ;
+} ;
 
 
 //-----CLEAR ENTRY-------------------
@@ -50,14 +42,28 @@ function clearScreen(){ // I have made this delete the last character in the dis
  }
 
 //--------------decimal point condition------
-function dot()                  //PUT IN "." if appropriate.
- {
-  if ( currentVal.length == 0)     //no leading ".", use "0."
-    { currentVal = "0.";
+function dot() {               //PUT IN "." if appropriate.
+  if ( currentVal.length == 0) {    //no leading ".", use "0."
+     currentVal = "0.";
     } else
     {  if ( ( currentVal.indexOf(".") == -1)){
      currentVal = currentVal + ".";
     };
   };
-   document.getElementById("display").innerHTML = currentVal;
- };
+  document.getElementById("display").innerHTML = currentVal;
+};
+
+function operate(op)            //Store operation - + * / 
+ {
+ if (operation != '') { Calculate(); }; //'Press "="  operation!
+ 
+  if (op.indexOf("*") > -1) { Operation = 1; };       // for multiply
+  if (op.indexOf("/") > -1) { Operation = 2; };       // division
+  if (op.indexOf("+") > -1) { Operation = 3; };       // sum
+  if (op.indexOf("-") > -1) { Operation = 4; };       // subtract
+
+  storeVal = currentVal;                 //store value
+  currentVal = "";
+ document.getElementById("display").innerHTML = currentVal;
+ }
+
