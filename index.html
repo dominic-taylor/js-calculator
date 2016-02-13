@@ -36,9 +36,9 @@
   <tr>
     <td>
       <table id="screen">
-        <tr >
-          <td id="display"></td>
-        </tr>
+      <tr >
+        <td id="display"></td>
+      </tr>
       </table>
     </td>
   </tr>
@@ -46,33 +46,33 @@
     <td>
     <table id="keypad">
       <tr>
-        <td id="allClear"  onclick=allClear()>AC</td>
-        <td id="clear"  onclick=clearScreen()>CE</td>
-        <td ></td>
-        <td id="minus" class="operator" onclick=keyValue('\-')>-</td>
+        <td id="allClear"  onclick=allClear()>AC</td> <!--Changed this to clear the string on display -->
+        <td id="clear"  onclick=clearScreen()>CE</td> <!-- Changed this to remove last character on display -->
+        <td></td>
+        <td id="minus" class="operator" onclick=operate('\-')>-</td> <!-- fucntion operate -->
       </tr>
       <tr>
-        <td id="seven"  onclick=keyValue(7)>7</td>
-        <td id="eight" onclick=keyValue(8)>8</td>
-        <td id="nine" onclick=keyValue(9)>9</td>
-        <td id="divide" class="operator" onclick=keyValue('\/')>&divide</td>
+        <td id="seven"  onclick=keyValue('7')>7</td> <!--NOTE I have changed the values keyValue passes to strings, instead of numbers -->
+        <td id="eight" onclick=keyValue('8')>8</td>
+        <td id="nine" onclick=keyValue('9')>9</td>
+        <td id="divide" class="operator" onclick=operate('\/')>&divide</td> <!-- fucntion operate -->
       </tr>
       <tr>
-        <td id="four" onclick=keyValue(4)>4</td>
-        <td id="five" onclick=keyValue(5)>5</td>
-        <td id="six"onclick=keyValue(6)>6</td>
-        <td id="multiply" class="operator" onclick=keyValue('\*')>&times</td>
+        <td id="four" onclick=keyValue('4')>4</td>
+        <td id="five" onclick=keyValue('5')>5</td>
+        <td id="six"onclick=keyValue('6')>6</td>
+        <td id="multiply" class="operator" onclick=operate('\*')>&times</td> <!-- fucntion operate -->
       </tr>
       <tr>
-        <td id="one" onclick=keyValue(1)>1</td>
-        <td id="two" onclick=keyValue(2)>2</td>
-        <td id="three" onclick=keyValue(3)>3</td>
-        <td id="add" class="operator" onclick=keyValue('\+')>+</td>
+        <td id="one" onclick=keyValue('1')>1</td>
+        <td id="two" onclick=keyValue('2')>2</td>
+        <td id="three" onclick=keyValue('3')>3</td>
+        <td id="add" class="operator" onclick=operate('\+')>+</td> <!-- fucntion operate -->
       </tr>
       <tr>
-        <td id="zero" onclick=keyValue(0)>0</td>
+        <td id="zero" onclick=keyValue('0')>0</td>
         <td id="dot" onclick=dot()>.</td>
-        <td id="result" onclick=keyValue('\=')>=</td>
+        <td id="result" onclick=Calculate()>=</td>  <!--evalu function  -->
         <td id="percent" class="operator" onclick=keyValue('\%')>%</td
       </tr>
     </table>
