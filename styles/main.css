@@ -1,7 +1,12 @@
-
+body, div, a {
+    padding:0;
+    margin:10px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
 
 table {
     border: 1px solid black;
+
 }
 
 #outer {
@@ -10,26 +15,31 @@ table {
 #display {
   width: 290px;
   background-color: white;
-  min-height: 30px;
-  border-radius: 10px;
+  height: 40px;
+  border-radius: 5px;
 }
 
 
 #keypad {
 background: #EEF0F0;
 border-radius: 10px;
+
 }
 
 #keypad  td {
   width: 50px;
   text-align: center;
   color: white;
-  table-layout: fixed;
   height:auto;
   background: #152A3D;
   border-radius: 10px;
   padding: 10px;
+  font-size: 20px;
   }
+
+#keypad td.operator {
+  background-color: #A37A7A
+}
 
 
 

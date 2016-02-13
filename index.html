@@ -5,7 +5,7 @@
   <!-- Basic Page Needs-->
 
   <meta charset="utf-8">
-  <title>JS Calculator 1.0 </title>
+  <title>Simple JS Calculator 1.0 </title>
   
   <!-- Mobile Specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,63 +19,67 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
-    <!-- JS --> 
-        <script src="js-cal.js" type="text/javascript" charset="utf-8"r></script>
+  
+  <!-- JS --> 
+       
+   <script src="js/js-cal.js" type="text/javascript" charset="utf-8"r></script>
+
 </head>
 
 <body class=>
 
 
-  <div id="calcutor"> 
+  <div align= "center" id="calculator"> 
 
-<table id="keypad"style="width:100%">
-
-<caption>JS Calculator</caption> 
-
-<tr id="display">
-<td>this is display</td>
-</tr>
-
-<tr>
-  <td id="allClear" onclick=keyValue('AC')>AC</td>
-  <td id="clear" onclick=keyValue('CE')>CE</td>
- <td id="percent" onclick=keyValue('\%')>%</td>
-  <td id="minus" onclick=keyValue('\-')>-</td>
-</tr>
-<tr>
-  
-  <td id="seven"  onclick=keyValue(7)>7</td>
-  <td id="eight" onclick=keyValue(8)>8</td>
-  <td id="nine" onclick=keyValue(9)>9</td>
-  <td id="divide" onclick=keyValue('\/')>&divide</td>
-
+<table id= "outer">
+  <caption>JS Calculator</caption> 
+  <tr>
+    <td>
+      <table id="screen">
+        <tr>
+          <td id="display"></td>
+        </tr>
+      </table>
+    </td>
   </tr>
   <tr>
-  
-  <td id="four" onclick=keyValue(4)>4</td>
-  <td id="five" onclick=keyValue(5)>5</td>
-  <td id="six"onclick=keyValue(6)>6</td>
-  <td id="multiply" onclick=keyValue('\*')>&times</td>
-</tr>
-<tr>
-   <td id="one" onclick=keyValue(1)>1</td>
-  <td id="two" onclick=keyValue(2)>2</td>
-  <td id="three" onclick=keyValue(3)>3</td>
-  <td id="add" onclick=keyValue('\+')>+</td>
+    <td>
+    <table id="keypad">
+      <tr>
+        <td id="allClear"  onclick=allClear()>AC</td> <!--Changed this to clear the string on display -->
+        <td id="clear"  onclick=clearScreen()>CE</td> <!-- Changed this to remove last character on display -->
+        <td></td>
+        <td id="minus" class="operator" onclick=keyValue('\-')>-</td>
+      </tr>
+      <tr>
+        <td id="seven"  onclick=keyValue('7')>7</td> <!--NOTE I have changed the values keyValue passes to strings, instead of numbers -->
+        <td id="eight" onclick=keyValue('8')>8</td>
+        <td id="nine" onclick=keyValue('9')>9</td>
+        <td id="divide" class="operator" onclick=keyValue('\/')>&divide</td>
+      </tr>
+      <tr>
+        <td id="four" onclick=keyValue('4')>4</td>
+        <td id="five" onclick=keyValue('5')>5</td>
+        <td id="six"onclick=keyValue('6')>6</td>
+        <td id="multiply" class="operator" onclick=keyValue('\*')>&times</td>
+      </tr>
+      <tr>
+        <td id="one" onclick=keyValue('1')>1</td>
+        <td id="two" onclick=keyValue('2')>2</td>
+        <td id="three" onclick=keyValue('3')>3</td>
+        <td id="add" class="operator" onclick=keyValue('\+')>+</td>
+      </tr>
+      <tr>
+        <td id="zero" onclick=keyValue('0')>0</td>
+        <td id="dot" onclick=dot()>.</td>
+        <td id="result" onclick=keyValue('\=')>=</td>  <!--evalu function to be linked here -->
+        <td id="percent" class="operator" onclick=keyValue('\%')>%</td
+      </tr>
+    </table>
+   </td>
   </tr>
-  <tr>
-  <td id="zero" onclick=keyValue(0)>0</td>
-  <td id="dot" onclick=keyValue('\.')>.</td>
-  <td id="equal" onclick=keyValue('\=')>=</td>
-</tr>
 </table>
   
-  
- 
-
-
-
-  </div>
-
-  </body>
-  </html>
+</div>
+</body>
+</html>
