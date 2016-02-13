@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 body, div, a {
     padding:0;
     margin:10px;
@@ -19,8 +16,9 @@ table {
 #display {
   width: 290px;
   background-color: white;
-  height: 40px;
+  height: 50px;
   border-radius: 5px;
+  font-size: 40px;
 }
 
 

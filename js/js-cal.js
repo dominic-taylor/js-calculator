@@ -84,7 +84,7 @@ function operate(op)            //Store operation - + * /
   storeVal = "0";                  //clear memory
   currentVal = currentVal + "";       //FORCE A STRING!
   if (currentVal.indexOf("Infinity") != -1)        //eg "1e320" * 1
-    { currentVal = "Aargh! Value too big";
+    { currentVal = "Value too big";
     };
   if (currentVal.indexOf("NaN") != -1)        //eg "1e320" / "1e320"
     { currentVal = "Not possible";
