@@ -55,14 +55,40 @@ function dot() {               //PUT IN "." if appropriate.
 
 function operate(op)            //Store operation - + * / 
  {
- if (operation != '') { Calculate(); }; //'Press "="  operation!
+ if (opVal != '') { Calculate(); }; //'Press "="  operation!
  
-  if (op.indexOf("*") > -1) { Operation = 1; };       // for multiply
-  if (op.indexOf("/") > -1) { Operation = 2; };       // division
-  if (op.indexOf("+") > -1) { Operation = 3; };       // sum
-  if (op.indexOf("-") > -1) { Operation = 4; };       // subtract
+  if (op.indexOf("*") > -1) { opVal = 1; };       // for multiply
+  if (op.indexOf("/") > -1) { opVal = 2; };       // division
+  if (op.indexOf("+") > -1) { opVal = 3; };       // sum
+  if (op.indexOf("-") > -1) { opVal = 4; };       // subtract
 
   storeVal = currentVal;                 //store value
   currentVal = "";
  document.getElementById("display").innerHTML = currentVal;
+ };
+
+//----------------Caclulate funtion------------- 
+ function Calculate()            //PERFORM CALCULATION (= button)
+ { 
+  if (opVal == 1) { currentVal = eval(storeVal) * eval(currentVal); };
+  if (opVal == 2)
+    { if (eval(currentVal) != 0)
+      { currentVal = eval(storeVal) / eval(currentVal)
+      } else
+      { currentVal = "Oops! Divide by zero"; 
+      }
+    };
+  if (opVal == 3) { currentVal = eval(storeVal) + eval(currentVal); };
+  if (opVal == 4) { currentVal = eval(storeVal) - eval(currentVal); };
+  opVal = 0;                //clear operation
+  storeVal = "0";                  //clear memory
+  currentVal = currentVal + "";       //FORCE A STRING!
+  if (currentVal.indexOf("Infinity") != -1)        //eg "1e320" * 1
+    { currentVal = "Aargh! Value too big";
+    };
+  if (currentVal.indexOf("NaN") != -1)        //eg "1e320" / "1e320"
+    { currentVal = "Not possible";
+    };
+  document.getElementById("display").innerHTML = currentVal;
+  // NOTE: if no operation, nothing changes, currentVal is left the same!
  }
