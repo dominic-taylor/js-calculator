@@ -4,11 +4,13 @@ var currentVal = "";  //set initial display to 0
 var opVal = "0";   // set operator index
 var storeVal = "0";  // set memory value to 0
 var maxDigit = 20; // maximum number before decimal
-
+var answer  = false;   
 
  //------ADD A DIGIT TO DISPLAY -----------
 function keyValue(key) {          
   //{ if (currentVal.indexOf("!") == -1) { //if not already an error
+      if (answer === true) { allClear();  
+       };     //PUT THIS HERE 
      if ((currentVal.length === 0) && (currentVal.indexOf(".") === -1)) {
           currentVal = key;
       } else {
@@ -21,13 +23,13 @@ function keyValue(key) {
       currentVal = '';
      };
     document.getElementById("display").innerHTML = currentVal;
-    console.log(currentVal);
+   // console.log(currentVal);
 } ;
 
 
 //-----CLEAR ENTRY-------------------
 function allClear() {       // I have made this clear the display string
- 
+  answer = false;
   currentVal = "";
   document.getElementById("display").innerHTML = currentVal;
   };
@@ -89,6 +91,9 @@ function operate(op)            //Store operation - + * /
   if (currentVal.indexOf("NaN") != -1)        //eg "1e320" / "1e320"
     { currentVal = "Not possible";
     };
+    answer = true;  
   document.getElementById("display").innerHTML = currentVal;
   // NOTE: if no operation, nothing changes, currentVal is left the same!
  }
+
+ 
