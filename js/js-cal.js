@@ -65,6 +65,8 @@ function operate(op)            //Store operation - + * /
   if (op.indexOf("/") > -1) { opVal = 2; };       // division
   if (op.indexOf("+") > -1) { opVal = 3; };       // sum
   if (op.indexOf("-") > -1) { opVal = 4; };       // subtract
+  if (op.indexOf("%") > -1) { opVal = 5; };      //percentage
+  if (op.indexOf("^") > -1) { opVal = 6; };      //power
 
   storeVal = currentVal;                 //store value
   currentVal = "";
@@ -72,37 +74,62 @@ function operate(op)            //Store operation - + * /
  };
 
 //----------------Caclulate funtion------------- 
- function Calculate()            //PERFORM CALCULATION (= button)
- { 
+ function Calculate()  {        
+  
+  //--- multiply------
   if (opVal == 1) { currentVal = eval(storeVal) * eval(currentVal); };
 
-  if (opVal == 2)
-    { if (eval(currentVal) != 0)
+  //----division------
+  if (opVal == 2){
+   if (eval(currentVal) != 0)
       { currentVal = eval(storeVal) / eval(currentVal)
       } else
       { currentVal = "Oops! Divide by zero"; 
-      }
-    };
+    }
+  };
 
-
+  //----addition-----
   if (opVal == 3) {   
     currentVal = eval(storeVal) + eval(currentVal); };
 
+    
+  //-----subtraction-----
   if (opVal == 4) { 
-
     currentVal = eval(storeVal) - eval(currentVal); };
-    opVal = 0;                //clear operation
-    storeVal = 0;                  //clear memory
-    currentVal = currentVal + "";       //FORCE A STRING!
+
+  //--------percent-------
+  if (opVal == 5) { 
+    currentVal = (eval(storeVal) * eval(currentVal))/100; };
+ 
+  // Power Function
+if (opVal == 6) { 
+    if (currentVal != "" && currentVal != 0 ){
+        
+        var p=prompt("Enter the power:")
+        
+        currentVal = Math.pow(currentVal,p)
+        }
+    else 
+        alert("Enter a number first")   
+}
+
+
+
+  opVal = 0;                          //clear operation
+  storeVal = "0";                       //clear memory
+  currentVal = currentVal + "";       //FORCE A STRING!
+  
   if (currentVal.indexOf("Infinity") != -1)        //eg "1e320" * 1
     { currentVal = "Value too big";
     };
+  
   if (currentVal.indexOf("NaN") != -1)        //eg "1e320" / "1e320"
     { currentVal = "Not possible";
     };
-   answer = true;  
+  
+  answer = true;  
+  
   document.getElementById("display").innerHTML = currentVal;
- // currentVal = '';
-  // NOTE: if no operation, nothing changes, currentVal is left the same!
+ // NOTE: if no operation, nothing changes, currentVal is left the same!
   
 };

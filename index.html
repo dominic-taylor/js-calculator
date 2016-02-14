@@ -47,7 +47,7 @@
       <tr>
         <td id="allClear"  onclick=allClear()>AC</td> <!--Changed this to clear the string on display -->
         <td id="clear"  onclick=clearScreen()>CE</td> <!-- Changed this to remove last character on display -->
-        <td></td>
+        <td id="power" class="operator" onclick=operate('\^')>X^Y</td>  <!-- power function -->
         <td id="minus" class="operator" onclick=operate('\-')>-</td> <!-- fucntion operate -->
       </tr>
       <tr>
@@ -72,7 +72,7 @@
         <td id="zero" onclick=keyValue('0')>0</td>
         <td id="dot" onclick=dot()>.</td>
         <td id="result" onclick=Calculate()>=</td>  <!--evalu function  -->
-       <!--  <td id="percent" class="operator" onclick=keyValue('\%')>%</td> supressed -->
+        <td id="percent" class="operator" onclick=operate('\%')>%</td> 
 
       </tr>
     </table>
