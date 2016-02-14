@@ -5,20 +5,19 @@ body, div, a {
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-table {
-    border: 1px solid black;
-
+table  {
+   /* border: 1px solid black;*/
 }
 
 #outer {
   background: #96995D;
 }
 #display {
-  width: 290px;
+  width: 300px;
   background-color: white;
   height: 50px;
   border-radius: 5px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 
@@ -29,7 +28,7 @@ border-radius: 10px;
 }
 
 #keypad  td {
-  width: 50px;
+  width: 55px;
   text-align: center;
   color: white;
   height:auto;
@@ -46,8 +45,3 @@ border-radius: 10px;
 
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
