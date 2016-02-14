@@ -3,19 +3,13 @@ var operators = ['x','+','-','/'];
 var currentVal = "";  //set initial display to 0 
 var opVal = "0";   // set operator index
 var storeVal = "0";  // set memory value to 0
-<<<<<<< HEAD
-var maxDigit = 13; // maximum number before decimal
+var maxDigit = 18; // maximum number before decimal
 var answer  = false;
 
-=======
-var maxDigit = 20; // maximum number before decimal
-var answer  = false;   
->>>>>>> 2259ccc2baaef0410aa9d2013e1d11d0db63b475
 
  //------ADD A DIGIT TO DISPLAY -----------
 function keyValue(key) {        
-  if (answer === true) { allClear();   };  
-  //{ if (currentVal.indexOf("!") == -1) { //if not already an error
+
       if (answer === true) { allClear();  
        };     //PUT THIS HERE 
      if ((currentVal.length === 0) && (currentVal.indexOf(".") === -1)) {
@@ -25,7 +19,7 @@ function keyValue(key) {
         };
  
   if (currentVal.length > maxDigit){                          
-      alert("Too long. Expressions must be less than 13 characters."); //don't allow over maxDigit digits before "." ???     
+      alert("Too long. Expressions must be less than 18 characters."); //don't allow over maxDigit digits before "." ???     
       // I Made this an alert because it is easier for the user to understand what has happended. 
       currentVal = '';
      };
@@ -112,19 +106,12 @@ function operate(op)            //Store operation - + * /
   if (currentVal.indexOf("NaN") != -1)        //eg "1e320" / "1e320"
     { currentVal = "Not possible";
     };
-<<<<<<< HEAD
-  answer = true;  
-=======
-    answer = true;  
->>>>>>> 2259ccc2baaef0410aa9d2013e1d11d0db63b475
+   answer = true;  
   document.getElementById("display").innerHTML = currentVal;
  // currentVal = '';
   // NOTE: if no operation, nothing changes, currentVal is left the same!
-<<<<<<< HEAD
   
 }
-=======
- }
 
  
->>>>>>> 2259ccc2baaef0410aa9d2013e1d11d0db63b475
+
