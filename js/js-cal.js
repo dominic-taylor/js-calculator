@@ -1,5 +1,3 @@
-var operators = ['x','+','-','/'];
-
 var currentVal = "";  //set initial display to 0 
 var opVal = "0";   // set operator index
 var storeVal = "0";  // set memory value to 0
@@ -93,13 +91,9 @@ function operate(op)            //Store operation - + * /
   if (opVal == 4) { 
 
     currentVal = eval(storeVal) - eval(currentVal); };
-
- 
-
-
-  opVal = 0;                //clear operation
-  storeVal = 0;                  //clear memory
-  currentVal = currentVal + "";       //FORCE A STRING!
+    opVal = 0;                //clear operation
+    storeVal = 0;                  //clear memory
+    currentVal = currentVal + "";       //FORCE A STRING!
   if (currentVal.indexOf("Infinity") != -1)        //eg "1e320" * 1
     { currentVal = "Value too big";
     };
@@ -111,7 +105,4 @@ function operate(op)            //Store operation - + * /
  // currentVal = '';
   // NOTE: if no operation, nothing changes, currentVal is left the same!
   
-}
-
- 
-
+};
